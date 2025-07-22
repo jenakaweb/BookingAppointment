@@ -1,3 +1,4 @@
+
 import React from 'react'
 import {
   Dialog,
@@ -11,6 +12,7 @@ import Image from 'next/image'
 import Logo from '@/public/logo.png'
 import { signIn } from 'next-auth/react'
 import { GoogleAuthButton } from './SubmitButton'
+import { GithubAuthButton } from './SubmitButton'
 
 const AuthModal = () => {
   return (
@@ -27,13 +29,12 @@ const AuthModal = () => {
                 </DialogTitle>
             </DialogHeader>
             <div className='flex flex-col mt-5 gap-3'>
-              <form action={ async () => {
-                "use server";
-                await signIn("google")
-              }} className='w-full'>
+             
                 <GoogleAuthButton/>
-              </form>
-              <Button>Sign in with Github</Button>
+              
+              
+                <GithubAuthButton/>
+              
             </div>
 
         </DialogContent>
